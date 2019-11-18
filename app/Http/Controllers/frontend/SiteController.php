@@ -11,4 +11,9 @@ class SiteController extends Controller
     {
         return view('sites.home');
     }
+
+    public function register()
+    {
+        return view('sites.register');
+    }
 }
