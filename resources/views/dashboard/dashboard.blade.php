@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="metric">
+                    {{-- <div class="metric">
                         <span class="icon"><i class="fa fa-user"></i></span>
                         <p>
                             <span class="number">{{totalSiswa()}}</span>
                             <span class="title">Total Siswa</span>
                         </p>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-md-3">
                     <div class="metric">
