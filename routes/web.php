@@ -11,7 +11,8 @@
 |
 */
 Route::get('/', 'frontend\SiteController@home');
-
+//regristrasi
+Route::get('/register', 'frontend\SiteController@register');
 //halaman login
 Route::get('/login','AuthController@login')->name('login');
 Route::post('/postlogin', 'AuthController@postlogin');
