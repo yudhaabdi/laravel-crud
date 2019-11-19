@@ -16,7 +16,7 @@
 <section class="search-course-area relative" style="background: unset;">
     <div class="container">
         <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6 col-md-6 search-course-left">
+            <div class="col-lg-3 col-md-6 search-course-left">
                 <h1 class="text-black">
                     Pendaftaran Siswa Baru <br>
                     SMPN 1 Wlingi
@@ -26,23 +26,35 @@
                 </p>
                 
             </div>
-            <div class="col-lg-4 col-md-6 search-course-right section-gap">
-                <form class="form-wrap" action="#" method="POST">
+            <div class="col-lg-48 col-md-6 search-course-right section-gap">
+                <form class="form-wrap" action="/postRegister" method="POST">
                     @csrf
                     <h4 class="text-black pb-20 text-center mb-30">Pendaftaran</h4>		
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Name'">
-                    <input type="phone" class="form-control" name="phone" placeholder="Your Phone Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Phone Number'">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'">
+
+                    <input type="text" class="form-control" name="nama" placeholder="Masukkan nama" onfocus="this.placeholder =
+                     ''" onblur="this.placeholder = 'Masukkan nama'">
+
+                    <input type="text" class="form-control" name="agama" placeholder="Masukkan agama" onfocus="this.placeholder =
+                     ''" onblur="this.placeholder = 'Masukkan agama'">
+                    
+                    <input type="textarea" class="form-control" name="alamat" placeholder="Masukkan alamat" onfocus="this.placeholder =
+                     ''" onblur="this.placeholder = 'Masukkan alamat'">
+
                     <div class="form-select" id="service-select">
-                        <select style="display: none;">
-                            <option datd-display="">Choose Course</option>
-                            <option value="1">Course One</option>
-                            <option value="2">Course Two</option>
-                            <option value="3">Course Three</option>
-                            <option value="4">Course Four</option>
-                        </select><div class="nice-select" tabindex="0"><span class="current">Choose Course</span><ul class="list"><li data-value="Choose Course" class="option selected">Choose Course</li><li data-value="1" class="option">Course One</li><li data-value="2" class="option">Course Two</li><li data-value="3" class="option">Course Three</li><li data-value="4" class="option">Course Four</li></ul></div>
-                    </div>									
-                    <button class="primary-btn text-uppercase">Submit</button>
+                        <select name="jenis_kelamin" style="display: none;">
+                            <option datd-display="">Jenis kelamin</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
+                    </div>	
+
+                    <input type="email" class="form-control" name="email" placeholder="Masukkan email" onfocus="this.placeholder =
+                     ''" onblur="this.placeholder = 'Masukkan email'">
+
+                    <input type="password" class="form-control" name="password" placeholder="Masukkan password" onfocus="this.placeholder =
+                     ''" onblur="this.placeholder = 'Masukkan password'">
+                    
+                    <button type="submit" class="primary-btn text-uppercase">Submit</button>
                 </form>
             </div>
         </div>
