@@ -11,12 +11,7 @@
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Data Guru</h3>
-                                <div class="right">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#modalTambahGuru">
-                                        <i class="lnr lnr-plus-circle"></i>
-                                    </button>
-                                </div>
+                                
                             </div>
                             <div class="panel-body">
                                 <table class="table table-hover" id="datatable">
@@ -60,7 +55,12 @@
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Detail Guru</h3>
-                                
+                                <div class="right">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#modalTambahGuru">
+                                        <i class="lnr lnr-plus-circle"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="panel-body">
                                 <table class="table table-hover" id="tabelguru">
@@ -101,7 +101,7 @@
         </button>
         </div>
         <div class="modal-body">
-            <form action="/guru/create" method="POST">
+            <form id="formsave" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="inputnama">Nama guru</label>
@@ -109,19 +109,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputagama">Kode</label>
-                    <input name="kode" type="text" class="form-control" id="inputagama" placeholder="Masukkan kode">
+                    <label for="inputagama">Telefon</label>
+                    <input name="telp" type="number" class="form-control" id="inputagama" placeholder="Masukkan nomor">
                 </div>
 
                 <div class="form-group">
-                    <label>Mata pelajaran</label>
-                    <input name="alamat" type="text" class="form-control" id="inputmapel" placeholder="Masukkan mapel">
+                    <label>Alamat</label>
+                    <textarea name="alamat" class="form-control" id="inputalamat" rows="3"></textarea>
                 </div>
 
-                <div class="form-group">
-                    <label>Semester</label>
-                    <textarea name="alamat" class="form-control" id="inputsemester" placeholder="Masukkan semester"></textarea>
-                </div>
+                
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -198,10 +195,25 @@
         $(document).ready(function () {
            $('#datatable').DataTable(); 
         });
-    </script>
-    <script>
+
         $(document).ready(function () {
            $('#tabelguru').DataTable(); 
+        });
+
+        $('#formsave').submit(function(e){
+            e.preventDefault();
+            var request = new FormData(this);
+            $.ajax({
+                url: "{{ url('/guru/create') }}",
+                method: "POST",
+                data: request,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data){
+                    window.location.reload();
+                }
+            });
         });
     </script>
 @endsection

@@ -43,6 +43,7 @@ Route::group(['middleware' =>  ['auth', 'checkRole:admin']], function () {
     Route::get('siswa/export_pdf', 'SiswaController@exportPdf');
     //menampilkan guru
     Route::get('/guru', 'GuruController@index');
+    Route::post('/guru/create', 'GuruController@create')->name('guru.create');
     //tambah data guru
 });
 

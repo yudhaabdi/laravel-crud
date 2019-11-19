@@ -17,4 +17,18 @@ class GuruController extends Controller
             'mapel' => $mapel
             ]);
     }
+
+    public function create(Request $request)
+    {
+        // $guru = Guru::insert([
+        //     'nama' => $request->nama,
+        //     'telp' => $request->telp,
+        //     'alamat' => $request->alamat,
+        //     ]);
+        $guru = new Guru;
+        $guru->nama = $request->nama;
+        $guru->telp = $request->telp;
+        $guru->alamat = $request->alamat;
+        $guru->save();
+    }
 }
