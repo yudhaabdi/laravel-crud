@@ -13,7 +13,7 @@
                                 <h3 class="panel-title">Data Guru</h3>
                                 <div class="right">
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#modalTambahGuru">
                                         <i class="lnr lnr-plus-circle"></i>
                                     </button>
                                 </div>
@@ -60,12 +60,7 @@
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Detail Guru</h3>
-                                <div class="right">
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#modalTambahGuru">
-                                        <i class="lnr lnr-plus-circle"></i>
-                                    </button>
-                                </div>
+                                
                             </div>
                             <div class="panel-body">
                                 <table class="table table-hover" id="tabelguru">
@@ -95,12 +90,12 @@
         </div>
         <!-- END MAIN CONTENT -->
     </div>
-<!-- Modal -->
+<!-- Modal guru-->
 <div class="modal fade" id="modalTambahGuru" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tambah data siswa</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah data guru</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -117,19 +112,25 @@
                     <label for="inputagama">Kode</label>
                     <input name="kode" type="text" class="form-control" id="inputagama" placeholder="Masukkan kode">
                 </div>
+
                 <div class="form-group">
-                    <label>Alamat</label>
-                    <textarea name="alamat" class="form-control" id="inputalamat" rows="3"></textarea>
+                    <label>Mata pelajaran</label>
+                    <input name="alamat" type="text" class="form-control" id="inputmapel" placeholder="Masukkan mapel">
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
+
+                <div class="form-group">
+                    <label>Semester</label>
+                    <textarea name="alamat" class="form-control" id="inputsemester" placeholder="Masukkan semester"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    </div>
-</div>  
+</div> 
+</div> 
 @endsection
 @section('container1')
     <div class="main">
